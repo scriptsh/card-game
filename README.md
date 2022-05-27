@@ -1,2 +1,2 @@
-# gard-game
+# card-game
 simple card game using js, html and css
