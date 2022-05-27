@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Authorization</title>
+    </head>
+
+    <style>
+        body {
+            background: url(https://kartinkin.net/uploads/posts/2021-07/thumbs/1625270626_22-kartinkin-com-p-mstiteli-fon-krasivie-foni-22.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;    
+            background-attachment: fixed;    
+            background-size: cover; 
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .register {
+            outline-color: white;
+            outline-style: double;
+            outline-width: 2px;
+            background: rgba(159, 159, 159, 0.5);
+
+            width: 50%;
+
+            position: fixed;
+            padding: 15px;
+            top: 25%;
+            left: 25%;
+        }
+
+        .mb-3 {
+            color: white;
+            margin: 10px;
+
+        }
+
+        .form-control {
+            width: 100%;
+            height: 30px;
+            border-radius: 0px 20px 20px 0px;
+            border-color: rgb(153, 153, 153);
+
+            font-size: 100%;
+        }
+
+        button {
+            background-color: rgb(44, 44, 44);
+            margin: 10px;
+            border-radius: 0px 20px 20px 0px;
+
+            font-size: 100%;
+            color: white;
+            padding: 10px 40px;
+        }
+
+    </style>
+
+    <body>
+        <div class="card container mt-4">
+            <div class="card-body">
+                <form class = 'register' action="/register" method="POST">
+                    <div class="mb-3">
+                        <label for="login" class="form-label">Login</label><br>
+                        <input type="text" class="form-control" id="login" name="login" minlength="6" required><br>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label><br>
+                        <input type="password" class="form-control" id="password" name="password" minlength="6" required><br>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="confirmPass" class="form-label">Confirm Password</label><br>
+                        <input type="password" class="form-control" id="confirmPass" name="confirmPass" minlength="6" required><br>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label><br>
+                        <input type="email" class="form-control" id="email" name="email" required><br>
+                    </div>
+
+                    <div id="error-block"></div>
+
+                    <button type="submit" class="btn btn-primary">Register User</button>
+                </form>
+            </div>
+
+        </div>
+
+        <script>
+
+            const password = document.querySelector('#password');
+            const confirmPass = document.querySelector('#confirmPass');
+            const button = document.querySelector('button');
+
+            button.addEventListener('click', (e) => {
+
+                if (password.value !== confirmPass.value) {
+                    e.preventDefault();
+                    alert("Not correct password, please write again.");
+
+                    document.querySelectorAll('input[type=password]').forEach(item => {
+                        item.value = "";
+                    });
+                }
+
+            });
+
+        </script>
+
+    </body>
+</html>
