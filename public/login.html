@@ -51,7 +51,7 @@
             padding: 10px 40px;
         }
 
-        .btn-submit:hover, .btn-login:hover {
+        .btn-submit:hover, .btn-registration:hover {
             background-color: rgb(0, 0, 0);
             cursor: pointer;
         }
@@ -66,27 +66,25 @@
             right: 53.5%;
             top: 19%;
             border-radius: 0px 20px 0px 0px;
-            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: rgb(88, 88, 88);
         }
 
         .btn-registration {
             position: absolute;
-            right: 62.55%;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            right: 62.3%;
             top: 19%;
             border-radius: 0px 20px 0px 0px;
-            background-color: rgb(88, 88, 88);
         }
 
     </style>
 
     <body>
         <div class="card-body">
-
-            <div class="btn btn-registration">Registration</div>
-
-            <form action="/login" method="POST">
-                <button class="btn btn-login">Login</button>
-            </form>>
+            <form action="/" method="GET">
+                <button class="btn btn-registration">Registration</button>
+            </form>
+            <div class="btn btn-login">Login</div>
 
             <form id = 'form' class = 'form' action="/login" method="POST">
                 <div class="block">
@@ -99,17 +97,7 @@
                     <input type="password" class = "text-field" id="password" name="password" minlength="6" required><br>
                 </div>
 
-                <div class="block">
-                    <label for="confirmPass">Confirm Password</label><br>
-                    <input type="password" class = "text-field" id="confirmPass" name="confirmPass" minlength="6" required><br>
-                </div>
-
-                <div class="block">
-                    <label for="email">Email Address</label><br>
-                    <input type="email" class = "text-field" id="email" name="email" required><br>
-                </div>
-
-                <button type="submit" class="btn btn-submit">Register</button>
+                <button type="submit" class="btn btn-submit">Login</button>
             </form>
 
         </div>
@@ -117,19 +105,12 @@
         <script>
 
             const password = document.querySelector('#password');
-            const confirmPass = document.querySelector('#confirmPass');
+            const login = document.querySelector('#login');
             const button = document.querySelector('.btn-submit');
 
             button.addEventListener('click', (e) => {
 
-                if (password.value !== confirmPass.value) {
-                    e.preventDefault();
-                    alert("Not correct password, please write again.");
-
-                    document.querySelectorAll('input[type=password]').forEach(item => {
-                        item.value = "";
-                    });
-                }
+                // here we checked login and password from bd
 
             });
 
