@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Card Game</title>
+    </head>
+
+    <style>
+
+        body {
+            background: url(https://kartinkin.net/uploads/posts/2021-07/thumbs/1625270626_22-kartinkin-com-p-mstiteli-fon-krasivie-foni-22.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;    
+            background-attachment: fixed;    
+            background-size: cover; 
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        button {
+            
+            background-color: rgb(255, 0, 0);
+            font-size: 100%;
+            color: white;
+            padding: 10px 40px;
+
+            position: absolute;
+            right: 45%;
+            top: 45%;
+
+            animation-name: more_and_less;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }    
+        
+        @keyframes more_and_less {
+            from {
+                transform: scale(1.4)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+        
+
+    </style>
+
+    <body>
+
+        <form action="/play" method="GET">
+            <button>Tap to play</button>
+        </form>
+
+    </body>
+</html>
